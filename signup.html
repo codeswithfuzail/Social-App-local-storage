@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Social Media</title>
+    <!-- External CSS for Sign Up Page -->
+    <link rel="stylesheet" href="assets/css/signup.css">
+</head>
+
+<body>
+
+    <!-- Full Screen Loader (Hidden by default) -->
+    <div id="loader" class="loader-overlay hidden">
+        <div class="spinner"></div>
+        <p>Creating your account...</p>
+    </div>
+
+    <!-- Main Compact Container -->
+    <div class="signup-container">
+
+        <!-- Left Side: Image with Overlay Text -->
+        <div class="signup-left">
+            <div class="overlay-text">
+                <h2>Welcome to Our Community</h2>
+                <p>Connect with friends and share your world.</p>
+            </div>
+        </div>
+
+        <!-- Right Side: Sign Up Form -->
+        <div class="signup-right">
+            <div class="form-wrapper">
+                <h2>Sign Up</h2>
+                <p>Create a new account</p>
+
+                <form id="signupForm">
+                    <!-- First Name & Last Name -->
+                    <div class="input-group">
+                        <input type="text" id="firstName" placeholder="First Name" required>
+                        <input type="text" id="lastName" placeholder="Last Name" required>
+                    </div>
+
+                    <!-- Username -->
+                    <input type="text" id="username" placeholder="Username" required>
+
+                    <!-- Gender (Only Male & Female) -->
+                    <div class="input-group gender-group">
+                        <span class="gender-title">Gender:</span>
+                        <label><input type="radio" name="gender" value="Male" required> Male</label>
+                        <label><input type="radio" name="gender" value="Female" required> Female</label>
+                    </div>
+
+                    <!-- Age & Email Address -->
+                    <div class="input-group">
+                        <input type="number" id="age" placeholder="Age" min="1" required>
+                        <input type="email" id="email" placeholder="Email Address" required>
+                    </div>
+
+                    <!-- City & Country -->
+                    <div class="input-group">
+                        <input type="text" id="city" placeholder="City" required>
+                        <input type="text" id="country" placeholder="Country" required>
+                    </div>
+
+                    <!-- Description / Bio -->
+                    <textarea id="bio" placeholder="Write a short description / bio about yourself..."
+                        rows="2"></textarea>
+
+                    <!-- Profile Picture Upload Options -->
+                    <div class="profile-pic-container">
+                        <p class="section-label">Profile Picture Option:</p>
+
+                        <!-- File Upload -->
+                        <div class="pic-input-wrapper">
+                            <label for="profileFile">Upload from Device:</label>
+                            <input type="file" id="profileFile" accept="image/*">
+                        </div>
+
+                        <p class="or-text">- OR -</p>
+
+                        <!-- Image URL -->
+                        <input type="url" id="profileUrl" placeholder="Paste Image URL here (https://...)">
+                    </div>
+
+                    <!-- Password (Minimum 8 Characters) -->
+                    <input type="password" id="password" placeholder="Password (Min 8 characters)" minlength="8"
+                        required>
+
+                    <!-- Create Account Button -->
+                    <button type="submit" class="btn-primary">Create Account</button>
+
+                    <div class="divider"><span>OR</span></div>
+
+                    <!-- Continue with Google (UI Only) -->
+                    <button type="button" class="btn-google">
+                        <img src="https://img.icons8.com/color/16/000000/google-logo.png" alt="Google"> Continue with
+                        Google
+                    </button>
+                </form>
+
+                <!-- Link to Log In Page -->
+                <p class="login-link">Already have an account? <a href="login.html">Log in here</a></p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- External JavaScript File -->
+    <script src="assets/js/auth.js"></script>
+</body>
+
+</html>

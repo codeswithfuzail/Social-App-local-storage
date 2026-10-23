@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - SocialApp</title>
+    <link rel="stylesheet" href="assets/css/profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <script src="assets/js/theme.js"></script>
+
+    <div class="app-container">
+
+        <!-- Left Sidebar Navigation (Laptop/Desktop View) -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <i class="fa-solid fa-share-nodes"></i>
+                <h2>SocialApp</h2>
+            </div>
+
+            <ul class="sidebar-menu">
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> <span>Home</span></a></li>
+                <li><a href="profile.html" class="active"><i class="fa-solid fa-user"></i> <span>Profile</span></a></li>
+                <li><a href="explorer.html"><i class="fa-solid fa-compass"></i> <span>Explore</span></a></li>
+                <li><a href="search.html"><i class="fa-solid fa-magnifying-glass"></i> <span>Search</span></a></li>
+                <li><a href="settings.html"><i class="fa-solid fa-gear"></i> <span>Settings</span></a></li>
+            </ul>
+
+            <a href="profile.html" class="sidebar-user">
+                <img id="sidebarUserDp" src="" alt="Your DP">
+                <div class="sidebar-user-info">
+                    <span class="sidebar-user-name" id="sidebarUserName">Loading...</span>
+                    <span class="sidebar-user-handle" id="sidebarUserHandle">@user</span>
+                </div>
+            </a>
+
+            <button id="logoutBtn" class="btn-logout-sidebar">
+                <i class="fa-solid fa-right-from-bracket"></i> <span>Logout</span>
+            </button>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+
+            <!-- Profile Header Card -->
+            <div class="profile-card">
+                <!-- Cover Photo Area -->
+                <div class="cover-photo-box" id="coverPhotoBox">
+                    <img id="coverImg" src="" alt="Cover Photo" class="cover-img">
+                    <button class="cover-edit-btn" id="openEditModalFromCoverBtn">
+                        <i class="fa-solid fa-camera"></i> Edit Cover
+                    </button>
+                </div>
+
+                <!-- Profile Info Bar -->
+                <div class="profile-header-details">
+                    <div class="dp-container">
+                        <img id="userDp" src="" alt="Profile DP" class="profile-dp">
+                    </div>
+
+                    <div class="profile-actions">
+                        <button class="btn btn-secondary" id="openEditModalBtn">
+                            <i class="fa-solid fa-pen"></i> Edit Profile
+                        </button>
+                        <button class="btn btn-primary" id="openPostModalBtn">
+                            <i class="fa-solid fa-plus"></i> Create Post
+                        </button>
+                    </div>
+                </div>
+
+                <div class="user-bio-section">
+                    <h2 id="userName">User Name</h2>
+                    <p class="user-handle" id="userHandle">@username</p>
+                    <p class="user-bio" id="userBio">No bio available.</p>
+                    <p class="user-location"><i class="fa-solid fa-location-dot"></i> <span id="userLocation">Karachi,
+                            Pakistan</span></p>
+
+                    <!-- User Stats: Zeroed out Followers -->
+                    <div class="stats-counter">
+                        <div class="stat-box">
+                            <span class="stat-number" id="postsCount">0</span>
+                            <span class="stat-label">Posts</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number" id="followersCount">0</span>
+                            <span class="stat-label">Followers</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number" id="followingCount">0</span>
+                            <span class="stat-label">Following</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Posts Section -->
+            <div class="posts-section">
+                <h3><i class="fa-solid fa-layer-group"></i> My Posts</h3>
+                <div class="posts-feed" id="postsFeed">
+                    <!-- Dynamic Posts Here -->
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Mobile Bottom Navigation Bar -->
+    <nav class="mobile-bottom-nav">
+        <a href="index.html"><i class="fa-solid fa-house"></i></a>
+        <a href="explorer.html"><i class="fa-solid fa-compass"></i></a>
+        <a href="#" id="mobileCreatePostBtn"><i class="fa-solid fa-plus-circle" style="color: #1877f2;"></i></a>
+        <a href="search.html"><i class="fa-solid fa-magnifying-glass"></i></a>
+        <a href="profile.html" class="active"><i class="fa-solid fa-user"></i></a>
+    </nav>
+
+    <!-- Modal 1: Edit Profile -->
+    <div class="modal-overlay hidden" id="editProfileModal">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3>Edit Profile</h3>
+                <button class="close-btn" id="closeEditModal">&times;</button>
+            </div>
+            <form id="editProfileForm">
+                <label>Bio:</label>
+                <input type="text" id="editBioInput" placeholder="Update your bio...">
+
+                <label>Location:</label>
+                <input type="text" id="editLocationInput" placeholder="e.g. Karachi, Pakistan">
+
+                <label>Profile Picture (Upload or Paste URL):</label>
+                <input type="file" id="editDpFile" accept="image/*">
+                <input type="url" id="editDpUrl" placeholder="Or paste image URL...">
+
+                <label>Cover Photo (Upload or Paste URL):</label>
+                <input type="file" id="editCoverFile" accept="image/*">
+                <input type="url" id="editCoverUrl" placeholder="Or paste cover image URL...">
+
+                <button type="submit" class="btn btn-primary btn-full mt-10">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal 2: Create Post -->
+    <div class="modal-overlay hidden" id="postModal">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3>Create New Post</h3>
+                <button class="close-btn" id="closePostModal">&times;</button>
+            </div>
+            <form id="createPostForm">
+                <textarea id="postCaption" placeholder="What's on your mind?..." rows="3"></textarea>
+
+                <div class="media-type-options">
+                    <label><input type="radio" name="mediaSource" value="none" checked> Text Only</label>
+                    <label><input type="radio" name="mediaSource" value="file"> Upload File</label>
+                    <label><input type="radio" name="mediaSource" value="url"> Image/Video URL</label>
+                    <label><input type="radio" name="mediaSource" value="youtube"> YouTube Video</label>
+                </div>
+
+                <div class="media-input-group hidden" id="fileUploadGroup">
+                    <input type="file" id="postMediaFile" accept="image/*,video/*">
+                </div>
+
+                <div class="media-input-group hidden" id="urlUploadGroup">
+                    <input type="url" id="postMediaUrl" placeholder="Paste Image or Video URL...">
+                </div>
+
+                <div class="media-input-group hidden" id="youtubeUploadGroup">
+                    <input type="url" id="postYoutubeUrl" placeholder="Paste YouTube video link (e.g. https://youtube.com/watch?v=...)">
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-full mt-10"><i class="fa-solid fa-paper-plane"></i>
+                    Publish Post</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="assets/js/profile.js"></script>
+</body>
+
+</html>

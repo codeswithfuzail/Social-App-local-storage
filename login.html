@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In - Social Media</title>
+    <link rel="stylesheet" href="assets/css/signup.css">
+    <!-- FontAwesome Icons for Google Button -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Full Screen Loader Overlay -->
+    <div id="loader" class="loader-overlay hidden">
+        <div class="spinner"></div>
+        <p>Logging in, redirecting to profile...</p>
+    </div>
+
+    <div class="signup-container">
+        <!-- Left Banner Image Area -->
+        <div class="signup-left">
+            <div class="overlay-text">
+                <h2>Welcome Back!</h2>
+                <p>Connect with friends, share your thoughts, and see what's happening in your world.</p>
+            </div>
+        </div>
+
+        <!-- Right Form Area -->
+        <div class="signup-right">
+            <div class="form-wrapper">
+                <h2>Log In to Your Account</h2>
+                <p>Please enter your login details to continue.</p>
+
+                <form id="loginForm">
+                    <!-- Separate Username Field -->
+                    <input type="text" id="loginUsername" placeholder="Username" required>
+
+                    <!-- Separate Email Field -->
+                    <input type="email" id="loginEmail" placeholder="Email Address" required>
+
+                    <!-- Password Field -->
+                    <input type="password" id="loginPassword" placeholder="Password" required>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn-primary">Log In</button>
+                </form>
+
+                <!-- Divider -->
+                <div class="divider">
+                    <span>OR</span>
+                </div>
+
+                <!-- Google Sign-In Button -->
+                <button type="button" class="btn-google" id="googleLoginBtn">
+                    <i class="fa-brands fa-google" style="color: #ea4335;"></i>
+                    Continue with Google
+                </button>
+
+                <!-- Sign Up Link -->
+                <div class="login-link">
+                    Don't have an account? <a href="signup.html">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/login.js"></script>
+</body>
+
+</html>

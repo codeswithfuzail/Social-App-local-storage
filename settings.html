@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - SocialApp</title>
+    <link rel="stylesheet" href="assets/css/profile.css">
+    <link rel="stylesheet" href="assets/css/settings.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <script src="assets/js/theme.js"></script>
+
+    <div class="app-container">
+
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <i class="fa-solid fa-share-nodes"></i>
+                <h2>SocialApp</h2>
+            </div>
+
+            <ul class="sidebar-menu">
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> <span>Home</span></a></li>
+                <li><a href="profile.html"><i class="fa-solid fa-user"></i> <span>Profile</span></a></li>
+                <li><a href="explorer.html"><i class="fa-solid fa-compass"></i> <span>Explore</span></a></li>
+                <li><a href="search.html"><i class="fa-solid fa-magnifying-glass"></i> <span>Search</span></a></li>
+                <li><a href="settings.html" class="active"><i class="fa-solid fa-gear"></i> <span>Settings</span></a>
+                </li>
+            </ul>
+
+            <a href="profile.html" class="sidebar-user">
+                <img id="sidebarUserDp" src="" alt="Your DP">
+                <div class="sidebar-user-info">
+                    <span class="sidebar-user-name" id="sidebarUserName">Loading...</span>
+                    <span class="sidebar-user-handle" id="sidebarUserHandle">@user</span>
+                </div>
+            </a>
+
+            <button id="logoutBtnSidebar" class="btn-logout-sidebar">
+                <i class="fa-solid fa-right-from-bracket"></i> <span>Logout</span>
+            </button>
+        </aside>
+
+        <!-- Main Settings Section -->
+        <main class="main-content">
+            <div class="settings-header">
+                <h2><i class="fa-solid fa-gear"></i> Account Settings</h2>
+                <p>Manage your preferences and security</p>
+            </div>
+
+            <!-- Settings Cards Wrapper -->
+            <div class="settings-wrapper">
+
+                <!-- 1. Theme Settings Card -->
+                <div class="setting-card">
+                    <div class="setting-header">
+                        <i class="fa-solid fa-moon"></i>
+                        <div>
+                            <h3>Appearance</h3>
+                            <p>Customize how SocialApp looks on your device</p>
+                        </div>
+                    </div>
+                    <div class="setting-body">
+                        <div class="theme-toggle-container">
+                            <span>Dark Mode</span>
+                            <label class="switch">
+                                <input type="checkbox" id="themeToggle">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Security (Password Change) Card -->
+                <div class="setting-card">
+                    <div class="setting-header">
+                        <i class="fa-solid fa-lock"></i>
+                        <div>
+                            <h3>Change Password</h3>
+                            <p>Update your password to keep your account secure</p>
+                        </div>
+                    </div>
+                    <div class="setting-body">
+                        <form id="changePasswordForm">
+                            <div class="form-group">
+                                <label for="oldPassword">Current Password</label>
+                                <input type="password" id="oldPassword" placeholder="Enter current password" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="newPassword">New Password</label>
+                                <input type="password" id="newPassword" placeholder="Enter new password" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="confirmPassword">Confirm New Password</label>
+                                <input type="password" id="confirmPassword" placeholder="Confirm new password" required>
+                            </div>
+                            <button type="submit" class="btn-save-pwd"><i class="fa-solid fa-key"></i> Update
+                                Password</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- 3. Logout Card -->
+                <div class="setting-card logout-card">
+                    <div class="setting-header">
+                        <i class="fa-solid fa-right-from-bracket" style="color: #e41e3f;"></i>
+                        <div>
+                            <h3>Session</h3>
+                            <p>Log out of your current session on this device</p>
+                        </div>
+                    </div>
+                    <div class="setting-body">
+                        <button id="logoutBtnMain" class="btn-logout"><i
+                                class="fa-solid fa-arrow-right-from-bracket"></i> Log Out</button>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+    </div>
+
+    <!-- Mobile Bottom Navigation Bar -->
+    <nav class="mobile-bottom-nav">
+        <a href="index.html"><i class="fa-solid fa-house"></i></a>
+        <a href="explorer.html"><i class="fa-solid fa-compass"></i></a>
+        <a href="search.html"><i class="fa-solid fa-magnifying-glass"></i></a>
+        <a href="profile.html"><i class="fa-solid fa-user"></i></a>
+    </nav>
+
+    <script src="assets/js/settings.js"></script>
+</body>
+
+</html>

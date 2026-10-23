@@ -1,0 +1,698 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f0f2f5;
+    color: #1c1e21;
+}
+
+/* App Main Layout Grid */
+.app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Laptop Sidebar Styling */
+.sidebar {
+    width: 250px;
+    background: #ffffff;
+    border-right: 1px solid #e4e6eb;
+    padding: 20px 15px;
+    position: fixed;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 20px;
+    color: #1877f2;
+    margin-bottom: 30px;
+    padding-left: 10px;
+}
+
+.sidebar-menu {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sidebar-menu a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 15px;
+    text-decoration: none;
+    color: #4b4f56;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+.sidebar-menu a:hover,
+.sidebar-menu a.active {
+    background: #e7f3ff;
+    color: #1877f2;
+}
+
+/* Sidebar User Avatar (shown above Logout on every app page) */
+.sidebar-user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    background: #f0f2f5;
+    text-decoration: none;
+}
+
+.sidebar-user img {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.sidebar-user-info {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.sidebar-user-name {
+    font-size: 13px;
+    font-weight: 700;
+    color: #1c1e21;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.sidebar-user-handle {
+    font-size: 12px;
+    color: #65676b;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.btn-logout-sidebar {
+    background: #fee2e2;
+    color: #dc2626;
+    border: none;
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+}
+
+/* Main Content Styling */
+.main-content {
+    margin-left: 250px;
+    flex: 1;
+    padding: 25px 40px;
+    max-width: 900px;
+}
+
+/* Profile Card Area */
+.profile-card {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 25px;
+}
+
+.cover-photo-box {
+    height: 200px;
+    background: linear-gradient(135deg, #1877f2, #00c6ff);
+    position: relative;
+}
+
+.cover-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cover-edit-btn {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background: rgba(0, 0, 0, 0.55);
+    color: #fff;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    backdrop-filter: blur(2px);
+}
+
+.cover-edit-btn:hover {
+    background: rgba(0, 0, 0, 0.75);
+}
+
+.profile-header-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 25px;
+    margin-top: -50px;
+}
+
+.dp-container {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid #ffffff;
+    background: #e4e6eb;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-dp {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-actions {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.btn {
+    padding: 9px 18px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-primary {
+    background: #1877f2;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: #166fe5;
+}
+
+.btn-secondary {
+    background: #e4e6eb;
+    color: #1c1e21;
+}
+
+.btn-secondary:hover {
+    background: #d8dadf;
+}
+
+.user-bio-section {
+    padding: 15px 25px 20px 25px;
+}
+
+.user-bio-section h2 {
+    font-size: 22px;
+    margin-bottom: 2px;
+}
+
+.user-handle {
+    color: #606770;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.user-bio {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.user-location {
+    font-size: 13px;
+    color: #606770;
+    margin-bottom: 15px;
+}
+
+/* Stats Counter */
+.stats-counter {
+    display: flex;
+    gap: 35px;
+    border-top: 1px solid #e4e6eb;
+    padding-top: 15px;
+}
+
+.stat-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-number {
+    font-size: 17px;
+    font-weight: 700;
+    color: #1c1e21;
+}
+
+.stat-label {
+    font-size: 12px;
+    color: #606770;
+}
+
+/* Feed Posts */
+.posts-section h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #1c1e21;
+}
+
+.posts-feed {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.no-posts {
+    background: #ffffff;
+    padding: 35px;
+    text-align: center;
+    border-radius: 10px;
+    color: #606770;
+}
+
+.post-card {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 18px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.post-author {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.post-author img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.post-author h4 {
+    font-size: 14px;
+}
+
+.post-author span {
+    font-size: 11px;
+    color: #8d949e;
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    color: #e41e3f;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.post-caption {
+    font-size: 14px;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.post-media {
+    width: 100%;
+    max-height: 420px;
+    object-fit: contain;
+    background: #000;
+    border-radius: 8px;
+    margin-top: 8px;
+    cursor: pointer;
+}
+
+/* Modals */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-overlay.hidden {
+    display: none;
+}
+
+.modal-card {
+    background: #fff;
+    width: 90%;
+    max-width: 450px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.modal-card input[type="text"],
+.modal-card input[type="url"],
+.modal-card textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 12px;
+    border: 1px solid #ccd0d5;
+    border-radius: 6px;
+    outline: none;
+}
+
+.media-type-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+.media-input-group.hidden {
+    display: none;
+}
+
+.modal-card label.field-label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: #606770;
+    margin-top: 10px;
+    margin-bottom: 2px;
+}
+
+/* YouTube Embed inside posts */
+.youtube-embed-wrap {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    /* 16:9 */
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 8px;
+    background: #000;
+}
+
+.youtube-embed-wrap iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.btn-full {
+    width: 100%;
+    justify-content: center;
+    padding: 10px;
+}
+
+.mt-10 {
+    margin-top: 10px;
+}
+
+/* Mobile Bottom Navigation Bar */
+.mobile-bottom-nav {
+    display: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 15px;
+        margin-bottom: 60px;
+    }
+
+    .profile-header-details {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .dp-container {
+        margin-top: -60px;
+    }
+
+    .profile-actions {
+        margin-top: 15px;
+    }
+
+    .user-bio-section {
+        text-align: center;
+    }
+
+    .stats-counter {
+        justify-content: center;
+    }
+
+    .mobile-bottom-nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: #ffffff;
+        border-top: 1px solid #e4e6eb;
+        padding: 10px 0;
+        z-index: 999;
+    }
+
+    .mobile-bottom-nav a {
+        color: #606770;
+        font-size: 20px;
+        text-decoration: none;
+    }
+
+    .mobile-bottom-nav a.active {
+        color: #1877f2;
+    }
+}
+
+/* ============================================
+   DARK MODE — shared across every page
+   (profile.css is loaded on all pages, so this
+   applies everywhere the theme toggle is used)
+   ============================================ */
+body.dark-mode {
+    background-color: #18191a;
+    color: #e4e6eb;
+}
+
+body.dark-mode .sidebar,
+body.dark-mode .mobile-bottom-nav,
+body.dark-mode .profile-card,
+body.dark-mode .post-card,
+body.dark-mode .no-posts,
+body.dark-mode .modal-card,
+body.dark-mode .create-post-card,
+body.dark-mode .user-card,
+body.dark-mode .no-users-found,
+body.dark-mode .search-placeholder,
+body.dark-mode .searched-user-profile,
+body.dark-mode .search-post-card,
+body.dark-mode .no-posts-msg,
+body.dark-mode .no-user-found,
+body.dark-mode .setting-card,
+body.dark-mode .sidebar-user {
+    background-color: #242526;
+    color: #e4e6eb;
+    border-color: #3e4042;
+}
+
+body.dark-mode .sidebar {
+    border-right-color: #3e4042;
+}
+
+body.dark-mode .sidebar-menu a {
+    color: #b0b3b8;
+}
+
+body.dark-mode .sidebar-menu a:hover,
+body.dark-mode .sidebar-menu a.active {
+    background: #263951;
+    color: #4599ff;
+}
+
+body.dark-mode .sidebar-brand,
+body.dark-mode .user-card-name,
+body.dark-mode .searched-info h3,
+body.dark-mode .search-post-text,
+body.dark-mode .stat-number,
+body.dark-mode .explore-header h2,
+body.dark-mode .search-header h2,
+body.dark-mode .settings-header h2,
+body.dark-mode .posts-section h3,
+body.dark-mode .user-posts-section h3,
+body.dark-mode .setting-header h3,
+body.dark-mode .form-group label,
+body.dark-mode .theme-toggle-container,
+body.dark-mode .user-bio-section h2 {
+    color: #e4e6eb;
+}
+
+body.dark-mode .user-handle,
+body.dark-mode .user-location,
+body.dark-mode .stat-label,
+body.dark-mode .user-card-handle,
+body.dark-mode .searched-info .handle,
+body.dark-mode .post-author span,
+body.dark-mode .explore-header p,
+body.dark-mode .settings-header p,
+body.dark-mode .setting-header p,
+body.dark-mode .search-input-box i {
+    color: #b0b3b8;
+}
+
+body.dark-mode .user-bio,
+body.dark-mode .user-card-bio,
+body.dark-mode .searched-info .bio,
+body.dark-mode .post-caption,
+body.dark-mode .comment-item strong {
+    color: #d4d6d9;
+}
+
+body.dark-mode .sidebar-user-handle {
+    color: #b0b3b8;
+}
+
+body.dark-mode .stats-counter,
+body.dark-mode .setting-header,
+body.dark-mode .post-actions-bar {
+    border-color: #3e4042;
+}
+
+body.dark-mode .comments-container {
+    border-top-color: #3e4042;
+}
+
+body.dark-mode .comment-item {
+    background: #3a3b3c;
+}
+
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode .modal-card input[type="text"],
+body.dark-mode .modal-card input[type="url"],
+body.dark-mode .modal-card textarea,
+body.dark-mode .search-input-box input,
+body.dark-mode .comment-input-box input {
+    background-color: #3a3b3c;
+    color: #e4e6eb;
+    border-color: #4e4f50;
+}
+
+body.dark-mode .create-post-trigger {
+    background: #3a3b3c;
+    color: #b0b3b8;
+}
+
+body.dark-mode .create-post-trigger:hover {
+    background: #4e4f50;
+}
+
+body.dark-mode .btn-secondary {
+    background: #3a3b3c;
+    color: #e4e6eb;
+}
+
+body.dark-mode .btn-secondary:hover {
+    background: #4e4f50;
+}
+
+body.dark-mode .btn-view-profile {
+    background: #3a3b3c;
+    color: #e4e6eb;
+}
+
+body.dark-mode .btn-view-profile:hover {
+    background: #4e4f50;
+}
+
+body.dark-mode .btn-follow.following,
+body.dark-mode .btn-follow-user.following {
+    background: #3a3b3c;
+    color: #e4e6eb;
+}
+
+body.dark-mode .action-btn {
+    color: #b0b3b8;
+}
+
+body.dark-mode .action-btn:hover {
+    background: #3a3b3c;
+    color: #4599ff;
+}
+
+body.dark-mode .dp-container {
+    border-color: #242526;
+    background: #3a3b3c;
+}
+
+body.dark-mode .close-btn {
+    color: #e4e6eb;
+}

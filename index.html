@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - SocialApp</title>
+    <link rel="stylesheet" href="assets/css/profile.css">
+    <link rel="stylesheet" href="assets/css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <script src="assets/js/theme.js"></script>
+
+    <div class="app-container">
+
+        <!-- Left Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <i class="fa-solid fa-share-nodes"></i>
+                <h2>SocialApp</h2>
+            </div>
+
+            <ul class="sidebar-menu">
+                <li><a href="index.html" class="active"><i class="fa-solid fa-house"></i> <span>Home</span></a></li>
+                <li><a href="profile.html"><i class="fa-solid fa-user"></i> <span>Profile</span></a></li>
+                <li><a href="explorer.html"><i class="fa-solid fa-compass"></i> <span>Explore</span></a></li>
+                <li><a href="search.html"><i class="fa-solid fa-magnifying-glass"></i> <span>Search</span></a></li>
+                <li><a href="settings.html"><i class="fa-solid fa-gear"></i> <span>Settings</span></a></li>
+            </ul>
+
+            <a href="profile.html" class="sidebar-user">
+                <img id="sidebarUserDp" src="" alt="Your DP">
+                <div class="sidebar-user-info">
+                    <span class="sidebar-user-name" id="sidebarUserName">Loading...</span>
+                    <span class="sidebar-user-handle" id="sidebarUserHandle">@user</span>
+                </div>
+            </a>
+
+            <button id="logoutBtn" class="btn-logout-sidebar">
+                <i class="fa-solid fa-right-from-bracket"></i> <span>Logout</span>
+            </button>
+        </aside>
+
+        <!-- Main Feed Content Area -->
+        <main class="main-content">
+
+            <!-- Create Post Trigger Card -->
+            <div class="create-post-card">
+                <img id="homeUserDp" src="" alt="DP">
+                <button id="openPostModalBtn" class="create-post-trigger">What's on your mind?</button>
+            </div>
+
+            <!-- Home Global Feed -->
+            <div class="posts-section">
+                <h3><i class="fa-solid fa-newspaper"></i> News Feed</h3>
+                <div class="posts-feed" id="homePostsFeed">
+                    <!-- Dynamic Global Posts Render Here -->
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Mobile Bottom Navigation Bar -->
+    <nav class="mobile-bottom-nav">
+        <a href="index.html" class="active"><i class="fa-solid fa-house"></i></a>
+        <a href="explorer.html"><i class="fa-solid fa-compass"></i></a>
+        <a href="#" id="mobileCreatePostBtn"><i class="fa-solid fa-plus-circle" style="color: #1877f2;"></i></a>
+        <a href="search.html"><i class="fa-solid fa-magnifying-glass"></i></a>
+        <a href="profile.html"><i class="fa-solid fa-user"></i></a>
+    </nav>
+
+    <!-- Modal: Create Post -->
+    <div class="modal-overlay hidden" id="postModal">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3>Create New Post</h3>
+                <button class="close-btn" id="closePostModal">&times;</button>
+            </div>
+            <form id="createPostForm">
+                <textarea id="postCaption" placeholder="What's on your mind?..." rows="3"></textarea>
+
+                <div class="media-type-options">
+                    <label><input type="radio" name="mediaSource" value="none" checked> Text Only</label>
+                    <label><input type="radio" name="mediaSource" value="file"> Upload File</label>
+                    <label><input type="radio" name="mediaSource" value="url"> Image/Video URL</label>
+                    <label><input type="radio" name="mediaSource" value="youtube"> YouTube Video</label>
+                </div>
+
+                <div class="media-input-group hidden" id="fileUploadGroup">
+                    <input type="file" id="postMediaFile" accept="image/*,video/*">
+                </div>
+
+                <div class="media-input-group hidden" id="urlUploadGroup">
+                    <input type="url" id="postMediaUrl" placeholder="Paste Image or Video URL...">
+                </div>
+
+                <div class="media-input-group hidden" id="youtubeUploadGroup">
+                    <input type="url" id="postYoutubeUrl" placeholder="Paste YouTube video link (e.g. https://youtube.com/watch?v=...)">
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-full mt-10"><i class="fa-solid fa-paper-plane"></i>
+                    Publish Post</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="assets/js/home.js"></script>
+</body>
+
+</html>

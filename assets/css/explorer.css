@@ -1,0 +1,121 @@
+/* Explore Page Layout */
+.explore-header {
+    margin-bottom: 25px;
+}
+
+.explore-header h2 {
+    font-size: 24px;
+    color: #1c1e21;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.explore-header p {
+    color: #65676b;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+/* User Grid Layout */
+.users-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+/* User Card Component */
+.user-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.user-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.user-card-dp {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 12px;
+    border: 3px solid #1877f2;
+}
+
+.user-card-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1c1e21;
+    margin-bottom: 2px;
+}
+
+.user-card-handle {
+    font-size: 13px;
+    color: #65676b;
+    margin-bottom: 8px;
+}
+
+.user-card-bio {
+    font-size: 12px;
+    color: #4b4c4f;
+    margin-bottom: 15px;
+    line-height: 1.4;
+    max-height: 34px;
+    overflow: hidden;
+    word-break: break-word;
+}
+
+.user-card-actions {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+    margin-top: auto;
+}
+
+.user-card-actions .btn {
+    flex: 1;
+    padding: 8px 10px;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn-view-profile {
+    background: #f0f2f5;
+    color: #1c1e21;
+    border: none;
+}
+
+.btn-view-profile:hover {
+    background: #e4e6eb;
+}
+
+.btn-follow-user {
+    background: #1877f2;
+    color: #ffffff;
+    border: none;
+}
+
+.btn-follow-user.following {
+    background: #e4e6eb;
+    color: #1c1e21;
+}
+
+.no-users-found {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 40px;
+    background: #ffffff;
+    border-radius: 12px;
+    color: #65676b;
+}

@@ -1,0 +1,333 @@
+/* Basic Reset & Box Sizing */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 15px;
+}
+
+/* Main Container */
+.signup-container {
+    display: flex;
+    width: 880px;
+    max-width: 98%;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Left Side (Image with Gradient Overlay) */
+.signup-left {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 30px;
+    color: #ffffff;
+    background: url('/assets/images/signup\ and\ login\ image.avif') center/cover no-repeat;
+}
+
+.signup-left::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.85));
+}
+
+.overlay-text {
+    position: relative;
+    z-index: 1;
+}
+
+.overlay-text h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.2;
+}
+
+.overlay-text p {
+    font-size: 13px;
+    opacity: 0.9;
+    line-height: 1.4;
+}
+
+/* Right Side (Form Area - Compact Padding & No Internal Scrollbar) */
+.signup-right {
+    flex: 1.1;
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-wrapper h2 {
+    font-size: 20px;
+    color: #1c1e21;
+    margin-bottom: 2px;
+}
+
+.form-wrapper>p {
+    color: #606770;
+    margin-bottom: 12px;
+    font-size: 13px;
+}
+
+/* Form Inputs Layout */
+.input-group {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.input-group input {
+    flex: 1;
+}
+
+form input:not([type="radio"]):not([type="file"]),
+form textarea {
+    width: 100%;
+    padding: 7px 10px;
+    margin-bottom: 8px;
+    border: 1px solid #ccd0d5;
+    border-radius: 6px;
+    outline: none;
+    font-size: 13px;
+    color: #1c1e21;
+    background-color: #f5f6f7;
+    transition: all 0.2s ease-in-out;
+}
+
+.input-group input:not([type="radio"]) {
+    margin-bottom: 0;
+}
+
+form input:not([type="radio"]):not([type="file"]):focus,
+form textarea:focus {
+    border-color: #1877f2;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 2px rgba(24, 119, 242, 0.2);
+}
+
+/* Textarea / Bio */
+textarea {
+    resize: none;
+    min-height: 42px;
+}
+
+/* Gender Radio Section */
+.gender-group {
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    font-size: 13px;
+    color: #4b4f56;
+    margin-bottom: 8px;
+}
+
+.gender-title {
+    font-weight: 600;
+    color: #1c1e21;
+}
+
+.gender-group label {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+}
+
+/* Profile Picture Upload Section */
+.profile-pic-container {
+    background: #f8f9fa;
+    border: 1px dashed #ccd0d5;
+    border-radius: 6px;
+    padding: 8px 10px;
+    margin-bottom: 8px;
+}
+
+.section-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #1c1e21;
+    margin-bottom: 4px;
+}
+
+.pic-input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    color: #606770;
+}
+
+.pic-input-wrapper input[type="file"] {
+    font-size: 11px;
+    color: #4b4f56;
+}
+
+.or-text {
+    text-align: center;
+    font-size: 10px;
+    font-weight: bold;
+    color: #8d949e;
+    margin: 3px 0;
+}
+
+/* Buttons */
+.btn-primary {
+    width: 100%;
+    padding: 9px;
+    background: #1877f2;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-top: 2px;
+}
+
+.btn-primary:hover {
+    background: #166fe5;
+}
+
+/* Divider */
+.divider {
+    text-align: center;
+    margin: 10px 0;
+    position: relative;
+}
+
+.divider::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 1px;
+    background: #e4e6eb;
+    z-index: 1;
+}
+
+.divider span {
+    background: #ffffff;
+    padding: 0 8px;
+    color: #8d949e;
+    font-size: 11px;
+    font-weight: 600;
+    position: relative;
+    z-index: 2;
+}
+
+/* Google Button */
+.btn-google {
+    width: 100%;
+    padding: 8px;
+    background: #ffffff;
+    border: 1px solid #ccd0d5;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #4b4f56;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.btn-google:hover {
+    background-color: #f5f6f7;
+}
+
+/* Log In Link */
+.login-link {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 12px;
+    color: #606770;
+}
+
+.login-link a {
+    color: #1877f2;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+/* Full Screen Loader */
+.loader-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.92);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loader-overlay.hidden {
+    display: none;
+}
+
+.spinner {
+    width: 45px;
+    height: 45px;
+    border: 4px solid #e4e6eb;
+    border-top: 4px solid #1877f2;
+    border-radius: 50%;
+    animation: spin 0.9s linear infinite;
+    margin-bottom: 12px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .signup-container {
+        flex-direction: column;
+        width: 100%;
+        max-width: 440px;
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    .signup-left {
+        display: none;
+    }
+
+    .signup-right {
+        padding: 20px 15px;
+    }
+}

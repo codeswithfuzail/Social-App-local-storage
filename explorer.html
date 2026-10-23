@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore - SocialApp</title>
+    <link rel="stylesheet" href="assets/css/profile.css">
+    <link rel="stylesheet" href="assets/css/explorer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <script src="assets/js/theme.js"></script>
+
+    <div class="app-container">
+
+        <!-- Left Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <i class="fa-solid fa-share-nodes"></i>
+                <h2>SocialApp</h2>
+            </div>
+
+            <ul class="sidebar-menu">
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> <span>Home</span></a></li>
+                <li><a href="profile.html"><i class="fa-solid fa-user"></i> <span>Profile</span></a></li>
+                <li><a href="explorer.html" class="active"><i class="fa-solid fa-compass"></i> <span>Explore</span></a>
+                </li>
+                <li><a href="search.html"><i class="fa-solid fa-magnifying-glass"></i> <span>Search</span></a></li>
+                <li><a href="settings.html"><i class="fa-solid fa-gear"></i> <span>Settings</span></a></li>
+            </ul>
+
+            <a href="profile.html" class="sidebar-user">
+                <img id="sidebarUserDp" src="" alt="Your DP">
+                <div class="sidebar-user-info">
+                    <span class="sidebar-user-name" id="sidebarUserName">Loading...</span>
+                    <span class="sidebar-user-handle" id="sidebarUserHandle">@user</span>
+                </div>
+            </a>
+
+            <button id="logoutBtn" class="btn-logout-sidebar">
+                <i class="fa-solid fa-right-from-bracket"></i> <span>Logout</span>
+            </button>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <div class="explore-header">
+                <h2><i class="fa-solid fa-compass"></i> Explore People</h2>
+                <p>Discover and connect with creators on SocialApp</p>
+            </div>
+
+            <!-- Users Grid -->
+            <div class="users-grid" id="usersGrid">
+                <!-- Registered users cards will render dynamically here -->
+            </div>
+        </main>
+
+    </div>
+
+    <!-- Mobile Bottom Navigation Bar -->
+    <nav class="mobile-bottom-nav">
+        <a href="index.html"><i class="fa-solid fa-house"></i></a>
+        <a href="explorer.html" class="active"><i class="fa-solid fa-compass"></i></a>
+        <a href="profile.html"><i class="fa-solid fa-user"></i></a>
+    </nav>
+
+    <script src="assets/js/explorer.js"></script>
+</body>
+
+</html>

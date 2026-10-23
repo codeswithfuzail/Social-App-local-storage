@@ -1,0 +1,173 @@
+/* Settings Page Styles */
+.settings-header {
+    margin-bottom: 25px;
+}
+
+.settings-header h2 {
+    font-size: 24px;
+    color: var(--text-color, #1c1e21);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.settings-header p {
+    color: #65676b;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.settings-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 650px;
+}
+
+.setting-card {
+    background: var(--card-bg, #ffffff);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.setting-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 18px;
+    border-bottom: 1px solid var(--border-color, #eef0f3);
+    padding-bottom: 12px;
+}
+
+.setting-header i {
+    font-size: 22px;
+    color: #1877f2;
+}
+
+.setting-header h3 {
+    font-size: 16px;
+    color: var(--text-color, #1c1e21);
+    margin-bottom: 2px;
+}
+
+.setting-header p {
+    font-size: 13px;
+    color: #65676b;
+}
+
+/* Toggle Switch Styling */
+.theme-toggle-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    color: var(--text-color, #1c1e21);
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .3s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .3s;
+}
+
+input:checked+.slider {
+    background-color: #1877f2;
+}
+
+input:checked+.slider:before {
+    transform: translateX(24px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* Password Form */
+.form-group {
+    margin-bottom: 14px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--text-color, #1c1e21);
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid var(--border-color, #ccd0d5);
+    border-radius: 8px;
+    font-size: 14px;
+    background: var(--input-bg, #ffffff);
+    color: var(--text-color, #1c1e21);
+    outline: none;
+}
+
+.btn-save-pwd {
+    background: #1877f2;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.btn-logout {
+    background: #ffebe9;
+    color: #e41e3f;
+    border: 1px solid #ffc4c1;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+}
+
+.btn-logout:hover {
+    background: #e41e3f;
+    color: #ffffff;
+}
+
+/* Dark mode for this page's components now lives in assets/css/profile.css,
+   which is loaded on every page, so the theme applies everywhere consistently. */
